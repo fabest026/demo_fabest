@@ -17,7 +17,8 @@ def get_gemini_response(question):
 
 st.set_page_config(page_title="Farhan Q&A Bot")
 
-st.header("Farhan GPT")
+st.title("Farhan GPT 🤖")
+st.subheader("AI Assistant 🥷")
 
 input=st.text_area("Prompt: ",key="Write prompt")
 submit=st.button("Generate")
