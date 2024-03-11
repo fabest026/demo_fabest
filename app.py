@@ -30,8 +30,6 @@ submit=st.button("Generate")
    #st.write(response)
 
 if submit:
-    # Display the spinner
-    with st.spinner("Generating..."):
         # Generate the response
         response=get_gemini_response(input)
         st.write(response)
