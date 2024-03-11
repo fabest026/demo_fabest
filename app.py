@@ -19,7 +19,7 @@ st.set_page_config(page_title="Farhan Q&A Bot")
 
 st.header("Farhan GPT")
 
-input=st.text_input("Prompt: ",key="Write prompt")
+input=st.text_area("Prompt: ",key="Write prompt")
 submit=st.button("Generate")
 
 ## Whwn submit is clicked
