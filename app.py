@@ -29,7 +29,7 @@ submit=st.button("Generate")
    #st.subheader("Here is the Output Read below")
    #st.write(response)
 
-if submit_button:
+if submit:
     # Display the spinner
     with st.spinner("Generating..."):
         # Generate the response
