@@ -24,9 +24,15 @@ submit=st.button("Generate")
 
 ## Whwn submit is clicked
 
-if submit:
-   response=get_gemini_response(input) 
+#if submit:
+   #response=get_gemini_response(input) 
    #st.subheader("Here is the Output Read below")
-   st.write(response)
+   #st.write(response)
 
-
+if submit_button:
+    # Display the spinner
+    with st.spinner("Generating..."):
+        # Generate the response
+        response=get_gemini_response(input)
+        st.write(response)
+  
