@@ -7,31 +7,31 @@ import google.generativeai as genai
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
+
 # function to load Gemini Pro model and get reponses
-model=genai.GenerativeModel("gemini-pro")
+model = genai.GenerativeModel("gemini-pro")
+
 def get_gemini_response(question):
-    response=model.generate_content(question)
+    response = model.generate_content(question)
     return response.text
 
-#initialize our streamlit app
 
+# initialize our streamlit app
 st.set_page_config(page_title="Farhan Q&A Bot")
 
 st.title("Farhan GPT 🤖")
 st.subheader("AI Assistant 🥷")
 
-input=st.text_area("Prompt: ",key="Write prompt")
-submit=st.button("Generate")
 
-## Whwn submit is clicked
+# initialize the chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-#if submit:
-   #response=get_gemini_response(input) 
-   #st.subheader("Here is the Output Read below")
-   #st.write(response)
 
-if submit:
-        # Generate the response
-        response=get_gemini_response(input)
-        st.write(response)
-  
+# when submit is clicked
+if prompt := st.chat_input("Your question"):  # Prompt for user input and save to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
+    response = get_gemini_response(prompt)
+    st.session_state.messages.append({"role": "bot", "content": response})
+    st.write(response)
