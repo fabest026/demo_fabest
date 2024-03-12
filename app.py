@@ -29,7 +29,7 @@ if "messages" not in st.session_state:
 
 
 # when submit is clicked
-if prompt := st.chat_input("Your question"):  # Prompt for user input and save to chat history
+if prompt := st.text_input("Your question"):  # Prompt for user input and save to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     response = get_gemini_response(prompt)
