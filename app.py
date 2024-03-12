@@ -17,7 +17,7 @@ def get_gemini_response(question):
 
 
 # initialize our streamlit app
-st.set_page_config(page_title="Farhan Q&A Bot")
+st.set_page_config(page_title="Farhan code Bot")
 
 st.title("Farhan GPT 🤖")
 st.subheader("AI Code Assistant 🥷")
