@@ -20,7 +20,7 @@ def get_gemini_response(question):
 st.set_page_config(page_title="Farhan Q&A Bot")
 
 st.title("Farhan GPT 🤖")
-st.subheader("AI Assistant 🥷")
+st.subheader("AI Code Assistant 🥷")
 
 
 # initialize the chat history
